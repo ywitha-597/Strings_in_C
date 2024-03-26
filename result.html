@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Result</title>
+</head>
+<body>
+    <header>
+        <h1>Quiz Result</h1>
+    </header>
+    <div class="container">
+        <h2>Your Score: <span id="score"></span></h2>
+        <a href="index.html">Take Another Quiz</a>
+    </div>
+
+    <script>
+        // Display the score from sessionStorage
+        var score = sessionStorage.getItem("score");
+        document.getElementById("score").textContent = score;
+    </script>
+</body>
+</html>

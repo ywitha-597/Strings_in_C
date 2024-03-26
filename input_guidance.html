@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Functions in C</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(to bottom, #4F4557, #6D5D6E);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #f3f4b1;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .function {
+        margin-bottom: 30px;
+        color: #F4EEE0;
+    }
+    .function h2 {
+        color: #f3f4b1;
+        margin-bottom: 10px;
+    }
+    .function p {
+        
+        font-size: 16px;
+        line-height: 1.5;
+        color: #F4EEE0;
+    }
+    .example-code {
+        background-color: #fff;
+        padding: 10px;
+        margin-top: 10px;
+        color: black;
+    }
+    code {
+        font-family: Consolas, monospace;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+    <h1>Input Functions in C</h1>
+
+    <div class="function">
+        <h2>scanf()</h2>
+        <p>scanf() is a function used for taking input from the standard input (usually the keyboard) in C. It reads input from the standard input stream stdin and scans that input according to the format provided.</p>
+        <p><strong>Syntax:</strong></p>
+        <div class="example-code">
+            <code>int scanf(const char *format, ...);</code>
+        </div>
+        <p><strong>Example:</strong></p>
+        <div class="example-code">
+            <code>int num;<br>scanf("%d", &num); // Reads an integer</code>
+        </div>
+        <p><strong>Preferred Over:</strong></p>
+        <ul>
+            <li>Preferred when reading formatted input, such as integers, floats, characters, etc.</li>
+            <li>Useful when input validation or specific formatting is required.</li>
+        </ul>
+    </div>
+
+    <div class="function">
+        <h2>gets()</h2>
+        <p>gets() is a function used to read a string from the standard input (usually the keyboard) in C. It reads characters from the standard input stream stdin and stores them as a C string into the buffer pointed by str until a newline character '\n' or EOF is encountered.</p>
+        <p><strong>Syntax:</strong></p>
+        <div class="example-code">
+            <code>char *gets(char *str);</code>
+        </div>
+        <p><strong>Example:</strong></p>
+        <div class="example-code">
+            <code>char str[100];<br>gets(str); // Reads a string</code>
+        </div>
+        <p><strong>Scenarios:</strong></p>
+        <ul>
+            <li>Useful when reading a single line of text without specific formatting requirements.</li>
+            <li>Should be avoided due to the risk of buffer overflow as it doesn't provide a way to specify the maximum number of characters to read.</li>
+        </ul>
+    </div>
+
+    <div class="function">
+        <h2>fgets()</h2>
+        <p>fgets() is a function used to read a line from the specified stream (usually stdin) in C. It reads characters from the specified stream stream and stores them as a C string into the buffer pointed by str until a newline character '\n' is encountered.</p>
+        <p><strong>Syntax:</strong></p>
+        <div class="example-code">
+            <code>char *fgets(char *str, int num, FILE *stream);</code>
+        </div>
+        <p><strong>Example:</strong></p>
+        <div class="example-code">
+            <code>char str[100];<br>fgets(str, sizeof(str), stdin); // Reads a string</code>
+        </div>
+        <p><strong>Scenarios:</strong></p>
+        <ul>
+            <li>Preferred when reading a line of text and providing a maximum limit to prevent buffer overflow.</li>
+            <li>Useful for reading user input from stdin when handling multiple lines.</li>
+        </ul>
+    </div>
+
+    <div class="function">
+        <h2>scanf("%[^\n]")</h2>
+        <p>scanf("%[^\n]") is a format specifier used to read a string with spaces using scanf. It reads input from the standard input stream until a newline character '\n' is encountered.</p>
+        <p><strong>Syntax:</strong></p>
+        <div class="example-code">
+            <code>int scanf("%[^\n]", str);</code>
+        </div>
+        <p><strong>Example:</strong></p>
+        <div class="example-code">
+            <code>char str[100];<br>scanf("%[^\n]", str); // Reads a string with spaces</code>
+        </div>
+        <p><strong>Scenarios:</strong></p>
+        <ul>
+            <li>Useful when reading strings containing spaces or multiple words.</li>
+            <li>Provides more flexibility in handling input compared to gets(), but may still pose a risk of buffer overflow if the size of the input exceeds the size of the buffer.</li>
+            <a href="https://www.knowprogram.com/c-programming/read-and-display-the-string-in-c-programming/">Reference</a>
+        </ul>
+    </div>
+
+    <!-- Additional example scenarios -->
+
+    <div class="function">
+        <h2>Example Scenario: Inputting a Name</h2>
+        <p>Scenario: Your program needs to accept the user's name as input. Names typically consist of a single word without spaces.</p>
+        <img src="img2.jpeg" alt="Example Image">
+       

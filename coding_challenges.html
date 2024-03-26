@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Concept Questions</title>
+<style>
+    /* CSS styles for the page layout */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color:  #5C5470;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: bisque;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .question {
+        background-color: bisque;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .question h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .question p {
+        color: #393333;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    .question a {
+        display: block;
+        color: rgb(188, 58, 58);
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>String Concept Questions</h1>
+    </header>
+    <div class="container" id="questionsContainer">
+        <!-- Questions will be dynamically added here -->
+    </div>
+
+    <script>
+        // Array of objects containing questions, descriptions, and links
+        var questions = [
+            {
+                question: "Reverse a String",
+                description: "Write a function that reverses a string. For example, inputting 'hello' should return 'olleh'.",
+                link: "https://leetcode.com/problems/reverse-string/"
+            },
+            {
+                question: "Valid Palindrome",
+                description: "Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.",
+                link: "https://leetcode.com/problems/valid-palindrome/"
+            },
+            {
+                question: "Longest Substring Without Repeating Characters",
+                description: "Given a string, find the length of the longest substring without repeating characters.",
+                link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+            },
+            {
+                question: "String to Integer (atoi)",
+                description: "Implement atoi which converts a string to an integer.",
+                link: "https://leetcode.com/problems/string-to-integer-atoi/"
+            },
+            {
+                question: "Reverse Words in a String",
+                description: "Given an input string, reverse the string word by word.",
+                link: "https://leetcode.com/problems/reverse-words-in-a-string/"
+            },
+            {
+                question: "Group Anagrams",
+                description: "Given an array of strings, group anagrams together.",
+                link: "https://leetcode.com/problems/group-anagrams/"
+            },
+            {
+                question: "Longest Palindromic Substring",
+                description: "Given a string s, find the longest palindromic substring in s.",
+                link: "https://leetcode.com/problems/longest-palindromic-substring/"
+            }
+            // Add more questions as needed
+        ];
+
+        // Function to display questions dynamically
+        function displayQuestions() {
+            var container = document.getElementById("questionsContainer");
+            questions.forEach(function(questionObj) {
+                var questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                var questionTitle = document.createElement("h2");
+                questionTitle.textContent = questionObj.question;
+                var questionDescription = document.createElement("p");
+                questionDescription.textContent = questionObj.description;
+                var questionLink = document.createElement("a");
+                questionLink.textContent = "View Problem";
+                questionLink.href = questionObj.link;
+                questionDiv.appendChild(questionTitle);
+                questionDiv.appendChild(questionDescription);
+                questionDiv.appendChild(questionLink);
+                container.appendChild(questionDiv);
+            });
+        }
+
+        // Call the function to display questions when the page loads
+        window.onload = function() {
+            displayQuestions();
+        };
+    </script>
+</body>
+</html>

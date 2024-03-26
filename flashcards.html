@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards - C Programming</title>
+<style>
+    /* CSS styles for the flashcards */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #4F4557, #6D5D6E);
+        color: #F4EEE0;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        color: #fff;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .card {
+        background-color: #F4EEE0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .card p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.5;
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Flashcards - C Programming</h1>
+    </header>
+    <div class="container">
+        <div class="card" onclick="toggleSyntax('strcpy')">
+            <h2>strcpy</h2>
+            <p id="strcpy" style="display: none;">
+                <strong>Description:</strong> Copies the string pointed to by source (including the null character) to the destination array.
+                <br>
+                <strong>Parameters:</strong> char* strcpy(char* destination, const char* source);
+                <br>
+                <strong>Trick:</strong> Think of `strcpy` as copying the content of one string to another. The destination (`destination`) is where you want to copy, and the source (`source`) is where the content comes from.
+            </p>
+        </div>
+        <div class="card" onclick="toggleSyntax('strcat')">
+            <h2>strcat</h2>
+            <p id="strcat" style="display: none;">
+                <strong>Description:</strong> Appends a copy of the source string to the destination string. The terminating null character in destination is overwritten by the first character of source, and a null-character is included at the end of the new string formed by the concatenation of both in destination.
+                <br>
+                <strong>Parameters:</strong> char* strcat(char* dest, const char* src);
+                <br>
+                <strong>Trick:</strong> Imagine a cat (CAT) joining two strings together. The destination string (`dest`) is like the cat's home, and the source string (`src`) is like the cat wandering around. The cat joins the two strings together.
+            </p>
+        </div>
+        <div class="card" onclick="toggleSyntax('strcmp')">
+            <h2>strcmp</h2>
+            <p id="strcmp" style="display: none;">
+                <strong>Description:</strong> Compares the string pointed to by str1 to the string pointed to by str2.
+                <br>
+                <strong>Parameters:</strong> int strcmp(const char *str1, const char *str2);
+                <br>
+                <strong>Trick:</strong> When you compare two strings (`str1` and `str2`) using `strcmp`, it returns an integer indicating whether the strings are equal, less than, or greater than each other. Think of it as comparing two strings for equality.
+            </p>
+        </div>
+        <div class="card" onclick="toggleSyntax('strlen')">
+            <h2>strlen</h2>
+            <p id="strlen" style="display: none;">
+                <strong>Description:</strong> Returns the length of the string pointed to by str, excluding the null character.
+                <br>
+                <strong>Parameters:</strong> int strlen(const char *str);
+                <br>
+                <strong>Trick:</strong> With `strlen`, you're finding the length of a string (`str`). It's like measuring the length of a rope. You pass the string to `strlen`, and it tells you how long the string is.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSyntax(id) {
+            var syntax = document.getElementById(id);
+            syntax.style.display = (syntax.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
